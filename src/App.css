@@ -1,0 +1,509 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.Main_logo {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.Main_logo img {
+  Width: 200px;
+  Height: 51px;
+}
+
+.Logo_img {
+  padding: 0 0 20px 70px;
+}
+
+.Signup_content {
+  width: 38%;
+  margin: auto;
+}
+
+.input {
+  background: #E8E6E680;
+  border: 2.49px solid #E0DDDD;
+  padding: 20px 15px;
+  font-size: 13px;
+}
+
+.Signup_p1 {
+  color: #8A9EAD;
+  font-size: 13px;
+  text-align: center;
+  margin: 0;
+}
+
+.Signup_p2 {
+  color: black;
+  font-size: 13px;
+  text-align: center;
+}
+
+.Signup_btn {
+  background-color: black;
+  color: white;
+}
+
+.Signup_foot {
+  display: flex;
+  color: #757885;
+  justify-content: center;
+  margin-top: 45px;
+  font-size: 13px;
+  border-top: 1.24px solid;
+  border-color: #757885;
+  padding-top: 45px;
+  margin-top: 55px;
+}
+
+.foot_p {
+  color: black;
+  font-weight: 600;
+}
+
+
+
+/* ======LogIn page =======*/
+.LogIn_content {
+  width: 38%;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.LogIn_p {
+  color: black;
+  font-size: 13px;
+  text-align: end;
+  font-weight: 600;
+}
+
+.Login_btn {
+  margin-top: 30px;
+  background-color: black;
+  color: white;
+}
+
+.button {
+  margin-top: 40px;
+}
+
+
+
+/* =====Header section css Start */
+
+.header {
+  display: flex;
+}
+
+.Stories {
+  gap: 22px;
+  display: flex;
+  margin: auto;
+  align-items: center;
+}
+
+.Stories img {
+  border-radius: 50%;
+
+}
+
+.Stories_content img {
+  width: 45px !important;
+  height: 45px;
+}
+
+.Stories_content {
+  text-align: center;
+  font-size: xx-small;
+  align-items: center;
+  display: grid;
+  justify-items: center;
+}
+
+.Stories_content p {}
+
+.Stories .owl-stage {
+  width: 660px !important;
+  gap: 20px;
+}
+
+.Stories .owl-carousel.owl-drag .owl-item {
+  width: 91px !important;
+  margin-right: 0;
+}
+
+.Stories .owl-theme .owl-dots {
+  display: none;
+}
+
+
+
+/* =====suggestions section  Css Start */
+.heading {
+  color: #8E8E8E;
+  font-size: 14.94px;
+  font-family: Outfit, sans-serif;
+  font-weight: 600;
+  line-height: 19.21px;
+  word-wrap: break-word
+}
+
+.Suggestions_body {
+  margin: 30px 0;
+}
+
+.Sugg_main {
+  display: flex;
+  margin: 0 0 15px 10px;
+}
+
+.sugg_p1 {
+  color: black;
+  font-size: 14.94px;
+  font-family: Outfit, sans-serif;
+  font-weight: 600;
+  line-height: 19.21px;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+.sugg_p2 {
+  color: #8E8E8E;
+  font-size: 11.54px;
+  font-family: Outfit, sans-serif;
+  line-height: 19.21px;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+.sugg_content {
+  gap: 20px;
+  display: flex;
+}
+
+.sugg_content img {
+  border-radius: 50%;
+  height: fit-content;
+}
+
+.follow_btn {
+  color: black;
+  font-size: 12.8px;
+  font-family: Outfit, sans-serif;
+  font-weight: 600;
+  line-height: 17.08px;
+  word-wrap: break-word;
+  margin-left: auto;
+  display: grid;
+  align-items: center;
+}
+
+.follow {
+  margin-bottom: 0;
+}
+
+.foot_btn {
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  background: none;
+}
+
+
+
+/* ========Trending sec Css Start========= */
+.TrendingSec {
+  background-color: #FFF4F5;
+  padding: 15px;
+}
+
+.main_home_section {
+  padding-top: 25px;
+}
+
+.trend_heading {
+  color: #0F1419;
+  font-size: 19px;
+  font-family: Outfit, sans-serif;
+  font-weight: 700;
+  line-height: 24px;
+  word-wrap: break-word
+}
+
+.trending_content {
+  display: flex;
+}
+
+.Trend_img {
+  margin-left: auto;
+  padding: 15px;
+}
+
+.Trend_img img {
+  width: 68px;
+  height: 68px;
+  border-radius: 20px;
+}
+
+.ul_items {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  color: #536471;
+  font-size: 13px;
+  font-family: Segoe UI;
+  font-weight: 400;
+  line-height: 16px;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+.list_items {
+  list-style: disc;
+}
+
+.trend_content {
+  margin-top: 24px;
+}
+
+.trend_content p {
+  color: #0F1419;
+  font-size: 15px;
+  font-family: Segoe UI;
+  font-weight: 700;
+  line-height: 20px;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+.Trend_footer {
+  margin-top: 16px;
+}
+
+
+/* =======RightsideBar css start====== */
+
+.right_side_sec {
+  align-items: end;
+}
+
+.RS_bar_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Username {}
+
+.Username p {
+  margin: 0;
+}
+
+.name {
+  color: #262626;
+  font-size: 14px;
+  font-family: Outfit, sans-serif;
+  font-weight: 600;
+  line-height: 18px;
+  word-wrap: break-word
+}
+
+.uname {
+  color: #8E8E8E;
+  font-size: 14px;
+  font-family: Outfit, sans-serif;
+  font-weight: 400;
+  line-height: 18px;
+  word-wrap: break-word
+}
+
+.RS_left_content {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.Profile {
+  font-size: 11px;
+  font-family: Outfit, sans-serif;
+  font-weight: 600;
+  line-height: 16px;
+  word-wrap: break-word;
+  color: #262626;
+}
+
+.Profile_text {
+  margin: 0;
+}
+
+.RS_list_items {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.RS_list_items li {
+  margin-bottom: 15px;
+}
+
+.RS_list_items a {
+  color: #0F1419;
+  text-decoration: none;
+  margin-left: 16px;
+}
+
+.RS_bar_img img {
+  width: 42px;
+  height: 42px;
+}
+
+.RS_list_items i {
+  margin-left: 15px;
+}
+
+
+/* =======Post sec Css Start ======*/
+
+
+.post-sec {
+  display: flex;
+  justify-content: center;
+}
+
+.post_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post_profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.post_img {
+  height: 45px;
+  width: 45px;
+}
+
+.username {
+  margin-bottom: 0;
+  font-size: small;
+  font-weight: 600;
+  font-family: Outfit, sans-serif;
+}
+
+.post_list_item {
+  margin-bottom: 0;
+  font-size: small;
+  font-family: Outfit, sans-serif;
+}
+
+.post_card_icon {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post_icons_right {
+  display: flex;
+  gap: 10px;
+}
+
+.post_foot_like {
+  color: #262626;
+  font-size: 12.19px;
+  font-family: Outfit, sans-serif;
+  font-weight: 700;
+  line-height: 15.67px;
+  word-wrap: break-word;
+  display: grid;
+  gap: 5px;
+  margin-top: 15px;
+}
+
+.likes {
+  margin-bottom: 0;
+}
+
+.add_comments {
+  border: none;
+}
+
+.post_foot_comment {
+  margin-bottom: 0;
+  font-size: 12.19px;
+  font-family: Outfit, sans-serif;
+  font-weight: 400;
+  line-height: 15.67px;
+  word-wrap: break-word;
+  display: grid;
+  gap: 5px;
+}
+
+
+
+/* =========Edit Profile css start=========== */
+
+.Edit_profile_img {
+  height: 40px;
+}
+
+.change_profile {
+  font-size: 14px;
+  font-family: Outfit, sans-serif;
+  font-weight: 600;
+  line-height: 18px;
+  word-wrap: break-word
+}
+
+.center_header {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.input_field {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+
+}
+
+.input_heading {
+  color: #262626;
+  font-size: 16px;
+  font-family: Outfit, sans-serif;
+  font-weight: 600;
+  line-height: 18px;
+  word-wrap: break-word;
+  padding-top: 9px;
+  width: 15%;
+  text-align: end;
+}
+
+.input_pera {
+  color: #8E8E8E;
+  font-size: 11px;
+  font-family: Outfit, sans-serif;
+  font-weight: 400;
+  line-height: 16px;
+  word-wrap: break-word;
+  margin: 10px 110px 0px 0px;
+}
+
+.input_content {
+  width: 70%;
+}
