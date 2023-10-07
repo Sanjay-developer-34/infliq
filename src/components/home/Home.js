@@ -11,12 +11,12 @@ function Home() {
     <>
     <div className='main_home_section'>
      <div className='container-fluid'>
-        <div className='row'>``
+        <div className='row'>
         <div className='col-lg-9'>
             <Header />
           <div className='container-fluid'>
             <div className='row'> 
-            <LeftSideBar />
+            <div className='col-lg-4'><LeftSideBar /></div>
             <Post />
             </div>
           </div>

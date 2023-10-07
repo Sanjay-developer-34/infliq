@@ -7,7 +7,7 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css'
 
 
-function Header2() {
+function Header() {
   return (
     <div className='header'>
       <div className='container-fluid'>
@@ -30,4 +30,4 @@ function Header2() {
     </div>
   );
 }
-export default Header2 
+export default Header

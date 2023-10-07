@@ -7,15 +7,21 @@ import { Route, Routes } from 'react-router-dom';
 // import EditProfile from './components/profile/EditProfile';
 // import Home from './components/home/Home';
 // import Post from './components/home/post/Post';
-import Header2 from './components/home/header/Header';
+import Header from './components/home/header/Header';
 import Home from './components/home/Home';
+import PostSomething from './components/postsomething/PostSomething';
+import EditProfile from './components/profile/EditProfile';
+import Reels from './components/reels/Reels';
+import Message from './components/message_sec/Message';
+import Explore from './components/explore/Explore';
 
 
 function App() {
   return (
     <div>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Explore/>} />
+        <Route path='/post' element={<PostSomething/>}/>
         <Route path='login' element={<LogIn />} />
         <Route path='register' element={<SignUp />} />
       </Routes>
