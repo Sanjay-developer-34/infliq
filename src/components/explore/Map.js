@@ -5,7 +5,7 @@ import story1 from '../../images/stroy1.png'
 
 function Map() {
     return (
-        <div className='col-lg-6'>
+        <div className='map_section_parent'>
             <div className='explore_nav'>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <div className="container-fluid">

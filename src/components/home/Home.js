@@ -17,7 +17,11 @@ function Home() {
           <div className='container-fluid'>
             <div className='row'> 
             <div className='col-lg-4'><LeftSideBar /></div>
-            <Post />
+            <div className='col-md-7'>
+                <Post />
+                <Post />
+                <Post />
+            </div>
             </div>
           </div>
         </div>

@@ -1,8 +1,9 @@
 import React from 'react'
+import ProfileData from './ProfileData'
 
 function Profile() {
   return (
-    <div>Profile</div>
+    <ProfileData/>
 
   )
 }
