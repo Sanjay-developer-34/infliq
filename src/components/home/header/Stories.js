@@ -8,10 +8,10 @@
 
 function Stories(props) {
   return (
-        <di  className='Stories_content item'>
+        <div  className='Stories_content item' key={Math.random()}>
             <img src={story1} alt=''></img>
             <p className=''>ashwadh_chowdary</p>
-        </di>
+        </div>
   )
 }
 

@@ -16,9 +16,9 @@ function Chat() {
                     </div>
                 </div>
                 <div className='chat_icon'>
-                <i class="fa-sharp fa-solid fa-phone"></i>
-                <i class="fa-sharp fa-solid fa-video"></i>
-                <i class="fa-sharp fa-solid fa-info"></i>
+                <i className="fa-sharp fa-solid fa-phone"></i>
+                <i className="fa-sharp fa-solid fa-video"></i>
+                <i className="fa-sharp fa-solid fa-info"></i>
                 </div>
             </div>
             <div className='chat_body'>
@@ -32,7 +32,7 @@ function Chat() {
                             </p>
                         </div>
                             <div className='left_body_icons'>
-                            <i class="fa-regular fa-face-smile"></i>
+                            <i className="fa-regular fa-face-smile"></i>
                             <img src={backward_icon} alt=''></img>
                             <img src={dots_img} alt=''></img>
                         </div>
@@ -46,14 +46,14 @@ function Chat() {
                 
             </div>
             <div className='footer'>
-                    <i class="fa-regular fa-face-smile"></i>
+                    <i className="fa-regular fa-face-smile"></i>
                     <input
                         type="text"
                         placeholder='messages....'
                         className="send_msgs_field form-control"
                     ></input>
-                    <i class="fa-regular fa-file"></i>
-                    <i class="fa-regular fa-heart"></i>
+                    <i className="fa-regular fa-file"></i>
+                    <i className="fa-regular fa-heart"></i>
                 </div>
 
             </div>

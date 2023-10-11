@@ -13,8 +13,8 @@ import 'owl.carousel/dist/assets/owl.theme.default.css'
 function Post() {
 
     const options = {
-        items: 1, // Number of items to display in the carousel
-        loop: true, // Enable loop mode
+        items: 3, // Number of items to display in the carousel
+        // loop: true, // Enable loop mode
         autoplay: false, // Autoplay the carousel
       };
     
@@ -34,18 +34,13 @@ function Post() {
                             </ul>
                         </div>
                         <div className='post_icon'>
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                            <i className="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     </div>
                     <OwlCarousel className='owl-theme' margin={10}  {...options}>
                         <div className='item'><img className="card-img-top mt-2" src={PostImg} alt="" /></div>
-                        <div className='item'><img className="card-img-top mt-2" src={PostImg} alt="" /></div>
-                        <div className='item'><img className="card-img-top mt-2" src={PostImg} alt="" /></div>
-                       
                     </OwlCarousel>
-
-                   
-                    
+    
                     <div className="post_card_icon mt-3">
                         <img src={post_icons} alt='' className='post_icons' />
                         <div className='post_icons_right'>

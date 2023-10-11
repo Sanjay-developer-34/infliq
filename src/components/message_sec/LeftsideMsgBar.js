@@ -19,9 +19,9 @@ function LeftsideMsgBar() {
       <div className="left_header">
         <p className="left_chat_username">
           ashwadh
-          <i class="fa-solid fa-chevron-down"></i>
+          <i className="fa-solid fa-chevron-down"></i>
         </p>
-        <i class="fa-regular fa-pen-to-square"></i>
+        <i className="fa-regular fa-pen-to-square"></i>
       </div>
       <div className="leftmsg_body">
         <div className="nav_btns">

@@ -22,7 +22,7 @@ function Shorts() {
                                             <p className='shorts_username'>Neil_joseph</p>
                                             <p className='users_caption'>The swag never drops 😎...</p>
                                             <div className='songs_detail'>
-                                                <i class="fa-solid fa-music"></i>
+                                                <i className="fa-solid fa-music"></i>
                                                 <p className='songs_name'>All the way (Westside Remix)</p>
                                             </div>
                                         </div>
@@ -32,23 +32,23 @@ function Shorts() {
                         </div>
                         <div className='shorts_icon'>
                             <div className='icon_content'>
-                                <i class="fa-solid fa-thumbs-up"></i>
+                                <i className="fa-solid fa-thumbs-up"></i>
                                 <p>245k</p>
                             </div>
                             <div className='icon_content'>
-                                <i class="fa-solid fa-thumbs-down"></i>
+                                <i className="fa-solid fa-thumbs-down"></i>
                                 <p>dislike</p>
                             </div>
                             <div className='icon_content'>
-                                <i class="fa-solid fa-message"></i>
+                                <i className="fa-solid fa-message"></i>
                                 <p>952</p>
                             </div>
                             <div className='icon_content'>
-                                <i class="fa-solid fa-share"></i>
+                                <i className="fa-solid fa-share"></i>
                                 <p>share</p>
                             </div>
                             <div className='icon_content'>
-                                <i class="fa-solid fa-ellipsis"></i>
+                                <i className="fa-solid fa-ellipsis"></i>
                             </div>
                         </div>
                     </div>

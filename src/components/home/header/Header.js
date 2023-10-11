@@ -20,7 +20,7 @@ function Header() {
           <div className='col-lg-8'>
             <div className='Stories mt-3'>
               <OwlCarousel className='owl-theme' margin={10} >
-                {StoryData.map((item) => <Stories imgsrc={item.imgsrc} />)}
+                {StoryData.map((item,index) => <Stories key={index} imgsrc={item.imgsrc} />)}
               </OwlCarousel>
 
             </div>

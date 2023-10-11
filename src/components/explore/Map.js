@@ -21,10 +21,10 @@ function Map() {
                                     <a className="nav-link" href=" ">SPORTS</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href=" " tabindex="-1" aria-disabled="true">EVENTS</a>
+                                    <a className="nav-link" href=" " tabIndex="-1" aria-disabled="true">EVENTS</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href=" " tabindex="-1" aria-disabled="true">HASHTAGS</a>
+                                    <a className="nav-link" href=" " tabIndex="-1" aria-disabled="true">HASHTAGS</a>
                                 </li>
                             </ul>
                         </div>
@@ -46,7 +46,7 @@ function Map() {
                 </div>
                 <div className='explore_Profile'>
                     <p className='Profile_text'>profile</p>
-                    <i class="fa-solid fa-chevron-right"></i>
+                    <i className="fa-solid fa-chevron-right"></i>
                 </div>
             </div>
         </div>
