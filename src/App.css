@@ -307,7 +307,10 @@ body {
   align-items: center;
 }
 
-.Username {}
+.RS_btn a i {
+  margin-left: 0;
+  margin-right: 10px;
+}
 
 .Username p {
   margin: 0;
@@ -348,11 +351,17 @@ body {
 
 .Profile_text {
   margin: 0;
+  color: black;
+}
+
+.Profile a{
+  text-decoration: none;
 }
 
 .RS_list_items {
   list-style: none;
   margin-top: 20px;
+  padding-left: 0;
 }
 
 .RS_btn {
@@ -436,6 +445,15 @@ body {
   text-align: center;
   border-bottom: none;
   margin-top: 70px;
+  position: relative;
+}
+
+.selected_file img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 60px;
 }
 
 .post_modal .modal-footer {
@@ -466,6 +484,8 @@ body {
   border-top: none;
   padding-bottom: 130px;
 }
+
+
 
 /* =============Post Modal================ */
 
@@ -661,6 +681,10 @@ body {
 
 /* =========Edit Profile css start=========== */
 
+.edit_profile_sec {
+  margin: 20px;
+}
+
 .Edit_profile_img {
   height: 40px;
 }
@@ -677,7 +701,12 @@ body {
   display: flex;
   gap: 40px;
   align-items: center;
-  margin: 40px 100px;
+  margin: 0 100px 20px 100px;
+}
+
+.Edit_profile_btn {
+  padding: 8px 60px;
+  margin: 5px 0;
 }
 
 .input_field {
@@ -695,7 +724,7 @@ body {
   line-height: 18px;
   word-wrap: break-word;
   padding-top: 9px;
-  width: 25%;
+  width: 26%;
   text-align: end;
 }
 
@@ -733,6 +762,7 @@ body {
 .edit_footer_content {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .submit_btn {
@@ -744,7 +774,7 @@ body {
   word-wrap: break-word;
   border: none;
   background-color: black;
-  padding: 0 30px;
+  padding: 10px 30px;
   border-radius: 10px;
 
 }
@@ -754,7 +784,8 @@ body {
   font-family: Outfit, sans-serif;
   font-weight: 600;
   line-height: 18px;
-  word-wrap: break-word
+  word-wrap: break-word;
+  margin: 0;
 }
 
 .logout_btn {
@@ -894,16 +925,29 @@ body {
 
 /* =============chat section  Css================== */
 
+.message_sec {
+  margin: 20px;
+}
+.modal {
+  background: #0000002b;
+}
+
+.chat_main_box{
+  border-right: 1px solid #8E8E8E;
+  border-bottom: 1px solid #8E8E8E;
+  margin-bottom: 20px;
+}
 
 .chat_sec {
-  padding: 15px 20px;
+  padding: 0px;
+
 }
 
 .chat_header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 15px 15px 15px;
+  padding: 0 30px 0% 35px;
   border-bottom: 1px solid #8E8E8E;
   margin-bottom: 15px;
 }
@@ -939,6 +983,7 @@ body {
 .chat_body {
   height: 420px;
   overflow-y: auto;
+  padding: 0 25px 20px 25px;
 }
 
 .active_time {
@@ -1025,7 +1070,8 @@ body {
   padding: 4px 25px;
   align-items: center;
   border: 1px solid #8E8E8E;
-  border-radius: 35px
+  border-radius: 35px;
+  margin: 0 20px 20px 20px;
 }
 
 .footer i {
@@ -1064,15 +1110,21 @@ body {
 
 
 .left_msgbar {
-  padding: 10px 20px;
+  padding: 0;
+}
+
+.col-lg-5.p-0.border-right {
+  border-right: 1px solid;
 }
 
 .left_header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
 }
 
-.chat_username {
+.left_chat_username {
   color: #262626;
   font-size: 16px;
   font-family: Roboto, sans-serif;
@@ -1085,10 +1137,9 @@ body {
 }
 
 .leftmsg_body {
-  margin-top: 15px;
+  margin-top: 16px;
   border-top: 1px solid #8E8E8E;
-  ;
-  padding-top: 15px;
+  padding: 15px;
 }
 
 .nav_btns {
@@ -1293,14 +1344,16 @@ img.followed_profile {
 
 /* ================Profile Data section Css============================== */
 
+
 .profile_data_header {
   display: flex;
-  gap: 30px;
+  align-items: center;
+  padding-left: 34px;
 }
 
 .profile_data_header img{
-  width: 93px;
-  height: 93px;
+  width: 125px;
+  height: 125px;
 }
 
 .users_information p {
@@ -1320,18 +1373,55 @@ img.followed_profile {
   gap: 10px;
 }
 
+.profile_data_nav {
+  justify-content: center;
+}
+
+.profile_data_body{
+  border-top: 1px solid #8E8E8E;
+  margin: 25px 0 ;
+  margin-left: 34px;
+
+}
+
+.profile_post_sec{
+  padding: 0 8px;
+}
+
+.uploaded_post img {
+  width: 100%;
+}
+
+.upcoming_post img {
+  width: 100%;
+}
+
+.profile_data_nav_list{
+  display: flex;
+  align-items: center;
+}
+
 .user_name p{
     font-size: 20px;
-    font-family: Outfit,sans-serif
-    ;
+    font-family: Outfit,sans-serif ;
     font-weight: 600;
     word-wrap: break-word;
+}
+
+.profile_data_photo {
+  width: 35%;
+  text-align: center;
+}
+
+.users_information {
+  width: 65%;
 }
 
 .user_name{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 50%;
 }
 
 .post_count_data p {
@@ -1349,3 +1439,4 @@ font-weight: 400;
 line-height: 18px;
 word-wrap: break-word
 }
+

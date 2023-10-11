@@ -2,13 +2,12 @@ import React from 'react'
 import story1 from '../../images/stroy1.png'
 import Logout from '../../images/logout.png'
 
-function EditProfile() {
+function EditProfileData() {
     return (
         <div className='edit_profile'>
             <div className='container-fluid'>
                 <div className=' row'>
-                    <div className=' col-lg-3'></div>
-                    <div className=' col-lg-6'>
+                    <div className=''>
                     <div className='edit_profile_content'>
                         <div className=' center_header'>
                                 <div className='RS_bar_img'>
@@ -98,4 +97,4 @@ function EditProfile() {
     )
 }
 
-export default EditProfile
+export default EditProfileData

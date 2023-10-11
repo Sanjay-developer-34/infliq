@@ -6,7 +6,7 @@ import dots_img from '../../images/Frame.svg'
 
 function Chat() {
     return (
-        <div className='chat_sec col-lg-5'>
+        <div className='chat_sec'>
             <div className='chat_header'>
                 <div className='chat_profile'>
                     <img src={chat_profile_img} alt=''></img>

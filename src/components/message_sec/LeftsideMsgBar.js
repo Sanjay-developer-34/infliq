@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Followers_profile from '../../images/Frame (3).png'
 import chat_profile_img from "../../images/Frame (1).png";
 import unfollowed_profile from '../../images/Frame (4).png'
+
 import followed_profile from  '../../images/Frame (5).png'
 import followed_profile2 from  '../../images/Frame (6).png'
 import post_img from '../../images/Frame (7).png'
@@ -13,9 +14,10 @@ function LeftsideMsgBar() {
   };
 
   return (
-    <section className="left_msgbar col-lg-4">
+    <section className="left_msgbar">
+      
       <div className="left_header">
-        <p className="chat_username">
+        <p className="left_chat_username">
           ashwadh
           <i class="fa-solid fa-chevron-down"></i>
         </p>
@@ -49,7 +51,7 @@ function LeftsideMsgBar() {
 
       <div className="notification_sec">
         <div
-          className={`modal ${notificationModal ? "show" : ""}`}
+          className={`modal fade ${notificationModal ? "show" : ""}`}
           tabIndex="-1"
           role="dialog"
           style={{ display: notificationModal ? "block" : "none" }}
@@ -59,6 +61,7 @@ function LeftsideMsgBar() {
               <div className="modal-content">
                 <div className="modal-header notification_header">
                   <h4 className="modal-title ">Notifications</h4>
+                  <button type="button" className="btn-close" onClick={() => setNotificationModal(false)} data-bs-dismiss="modal"></button>
                 </div>
 
                 <div className="modal-body">

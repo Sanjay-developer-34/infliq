@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { useState, useEffect }  from 'react'
 import story1 from '../../../images/stroy1.png'
 import photo_icon from '../../../images/post_something.png'
-import PostImg from '../../../images/post_img.png'
 import userimg from '../../../images/Frame.png'
-import { useState } from 'react';
+import { Link } from 'react-router-dom'
 
 
 function RightsideBar() {
@@ -12,17 +11,49 @@ function RightsideBar() {
     const [showModal, setShowModal] = useState(false);
     const OpenModal = () => {
         setShowModal(true);
-    }
+    };
 
-    const [showpostModal, setShowpostModal] = useState(false);
-    const PostModal = () => {
-        setShowpostModal(true);
-    }
+    //  for  selecting files from system
+
+    const fileInputRef = React.createRef();
+    const [selectedFile, setSelectedFile] = useState('');
+
+    const handleButtonClick = () => {
+        // Trigger the click event on the file input when the button is clicked
+        fileInputRef.current.click();
+  };
+
+  const handleFileChange = (e) => {
+    // Handle the file selection here
+    const selectedFile = e.target.files[0];
+    if (selectedFile) {
+      setSelectedFile(URL.createObjectURL(selectedFile));
+      
+    }// You can perform additional actions with the selected file here
+  };
 
     const [searchModal, setSearchModal] = useState(false);
     const SearchModal = () => {
         setSearchModal(true);
-    }
+    };
+
+    // useEffect(() => {
+    //     if (searchModal) {
+    //       const modal = document.getElementById('exampleModal');
+    
+    //       const handleClickOutside = (event) => {
+    //         if (modal && !modal.contains(event.target)) {
+    //           setSearchModal(false);
+    //         }
+    //       };
+    
+    //       document.addEventListener('click', handleClickOutside);
+    
+    //       return () => {
+    //         document.removeEventListener('click', handleClickOutside);
+    //       };
+    //     }
+    //   }, [searchModal]);
 
     return (
 
@@ -41,31 +72,30 @@ function RightsideBar() {
                             </div>
                         </div>
                         <div className='Profile'>
-                            <p className='Profile_text'>profile</p>
+                            <Link to='/profile'><p className='Profile_text'>profile</p></Link>
                         </div>
                     </div>
                     <div className='RS_bar_list'>
                         <ul className='RS_list_items'>
                             <li>
-                                <button className='RS_btn'> <i className="fa-solid fa-house"></i>
-                                    Home</button>
+                                <button className='RS_btn'> <Link to='/home'><i className="fa-solid fa-house"></i>
+                                    Home</Link></button>
                             </li>
                             <li>
                                 <button className='RS_btn' onClick={SearchModal}><i className="fa-solid fa-magnifying-glass"></i>
                                     Search</button>
                             </li>
                             <li>
-                                <button className='RS_btn'><i className="fa-solid fa-earth-americas"></i>
-                                    Explore</button>
+                                <button className='RS_btn'><Link to='/Explore_page'><i className="fa-solid fa-earth-americas"></i>
+                                    Explore</Link></button>
                             </li>
                             <li>
-                                <button className='RS_btn'><i className="fa-brands fa-youtube"></i>
-
-                                    Shorts</button>
+                                <button className='RS_btn'><Link to='/Shorts'><i className="fa-brands fa-youtube"></i>
+                                    Shorts</Link></button>
                             </li>
                             <li>
-                                <button className='RS_btn'><i className="fa-brands fa-rocketchat"></i>
-                                    Message</button>
+                               <button className='RS_btn'><Link to='/message'><i className="fa-brands fa-rocketchat"></i>
+                                    Message</Link></button> 
                             </li>
                             <li>
                                 <button className='RS_btn'>  <i className="fa-brands fa-spotify"></i>
@@ -89,14 +119,16 @@ function RightsideBar() {
 
 
 
-            <div className={`modal ${showModal ? 'show' : ''}`} tabIndex="-1" role="dialog" style={{ display: showModal ? 'block' : 'none' }}>
+            <div className={`modal fade${showModal ? 'show' : ''}`} tabIndex="-1" role="dialog" style={{ display: showModal ? 'block' : 'none' }}>
                 <div className='post_modal'>
                     <div className="modal-dialog">
                         <div className="modal-content">
 
                             <div className="modal-header post_modal_header">
                                 <h4 className="modal-title modal_heading">Create a Post</h4>
-                                <button type="button" className="btn-close" onClick={() => setShowModal(false)} data-bs-dismiss="modal"></button>
+                                {selectedFile ? (<button type="button" className="post_button" onClick={() => setShowModal(false)} ><i className="fa-solid fa-check"></i></button>)
+                                                     : (<button type="button" className="btn-close" onClick={() => setShowModal(false)} data-bs-dismiss="modal"> </button>)}
+                                
                             </div>
                             <div className="modal-body">
                                 <img src={photo_icon} alt=''></img>
@@ -104,7 +136,23 @@ function RightsideBar() {
                             </div>
 
                             <div className="modal-footer">
-                                <button type="button" onClick={PostModal} className="btn select_btn">Select from computer</button>
+                            <div>
+                                <input
+                                    type="file"
+                                    ref={fileInputRef}
+                                    style={{ display: 'none' }}
+                                    onChange={handleFileChange}
+                                    accept="image/*" // Optional: Specify accepted file types
+                                />
+                                <button type="button" onClick={handleButtonClick} className="btn select_btn">
+                                    Select from computer
+                                </button>
+                                {selectedFile && (
+                                    <div className='selected_file'>
+                                        <img src={selectedFile} alt="Selected Preview"  />
+                                    </div>
+                                )}
+                            </div>
                             </div>
 
                         </div>
@@ -116,13 +164,13 @@ function RightsideBar() {
             {/* ========================post Modal ======================= */}
 
 
-            <div className={`modal ${showpostModal ? 'show' : ''}`} tabIndex="-1" role="dialog" style={{ display: showpostModal ? 'block' : 'none' }}>
+            {/* <div className={`modal fade ${showpostModal ? 'show' : ''}`} tabIndex="-1" role="dialog" style={{ display: showpostModal ? 'block' : 'none' }} >
                 <div className='post_modal'>
                     <div className="modal-dialog">
                         <div className="modal-content">
 
                             <div className="modal-header post_modal_header">
-                                <h4 className="modal-title modal_heading">Create a Post</h4>
+                                <h4 className="modal-title modal_heading" id="exampleModalLabel">Create a Post</h4>
                                 <button type="button" className="post_button" onClick={() => setShowpostModal(false)} ><i className="fa-solid fa-check"></i></button>
                             </div>
 
@@ -132,7 +180,7 @@ function RightsideBar() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
 
             {/* ================Search modal============== */}
@@ -162,7 +210,7 @@ function RightsideBar() {
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button"  class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" onClick={() => setSearchModal(false)}  class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
