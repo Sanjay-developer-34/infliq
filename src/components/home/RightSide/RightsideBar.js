@@ -51,10 +51,11 @@ function RightsideBar() {
     //     };
     //   }, [searchModal]);
 
+
     return (
 
 
-        <section className=' right_side_se pt-3'>
+        <section className=' right_side_sec pt-3'>
             <div className=''>
                 <div className='Rightside_bar'>
                     <div className='RS_bar_content'>
@@ -121,9 +122,10 @@ function RightsideBar() {
 
                             <div className="modal-header post_modal_header">
                                 <h4 className="modal-title modal_heading">Create a Post</h4>
+                               
                                 {selectedFile ? (<button type="button" className="post_button" onClick={() => setShowModal(false)} ><i className="fa-solid fa-check"></i></button>)
-                                                     : (<button type="button" className="btn-close" onClick={() => setShowModal(false)} data-bs-dismiss="modal"> </button>)}
-                                
+                                                     : (<i class="fa-solid fa-rectangle-xmark"></i>  )}
+                                                     <button type="button" className="btn-close" onClick={() => setShowModal(false)} data-bs-dismiss="modal"> </button>             
                             </div>
                             <div className="modal-body">
                                 <img src={photo_icon} alt=''></img>
@@ -165,12 +167,46 @@ function RightsideBar() {
                             <div className="modal-header search_modal_header">
                                 <h5 className="modal-title model_heading" id="exampleModalLabel">Search</h5>
                             </div>
-                            <input type='text' className='search_id' placeholder='search'></input>
+                            <div  className='input_section'>
+                                <input type='text' className='search_id' placeholder='search'></input>
+                                <button type='button' className='btn btn-close input_clear' data-bs-dismiss="search_id"></button>
+                            </div>
+
                             <div className="modal-body">
                                <div className='body_btn'>
                                     <p>Recent</p>
                                     <button type='button'>Clear all</button>
                                </div>
+                                <div className='search_box'>
+                                    <div className='searched_content'>
+                                        <img src={userimg} alt=''></img>
+                                        <div>
+                                            <p className='serched_name'>name</p>
+                                            <p className='searched_username'>username</p>
+                                        </div>
+                                    </div>
+                                    <button type='button' className='btn btn-close'></button>
+                                </div>
+                                <div className='search_box'>
+                                    <div className='searched_content'>
+                                        <img src={userimg} alt=''></img>
+                                        <div>
+                                            <p className='serched_name'>name</p>
+                                            <p className='searched_username'>username</p>
+                                        </div>
+                                    </div>
+                                    <button type='button' className='btn btn-close'></button>
+                                </div>
+                                <div className='search_box'>
+                                    <div className='searched_content'>
+                                        <img src={userimg} alt=''></img>
+                                        <div>
+                                            <p className='serched_name'>name</p>
+                                            <p className='searched_username'>username</p>
+                                        </div>
+                                    </div>
+                                    <button type='button' className='btn btn-close'></button>
+                                </div>
                                 <div className='search_box'>
                                     <div className='searched_content'>
                                         <img src={userimg} alt=''></img>

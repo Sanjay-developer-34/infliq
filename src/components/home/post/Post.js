@@ -24,7 +24,7 @@ function Post() {
         
             <div >
             <div className='post_section'>
-                <div className="card mt-5 shadow p-3 mb-5 bg-white rounded">
+                <div className="card mt-5 shadow p-3 mx-5 bg-white rounded">
                     <div className='post_header'>
                         <div className='post_profile'>
                             <img src={story1} alt='' className='post_img' />
@@ -37,8 +37,8 @@ function Post() {
                             <i className="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     </div>
-                    <OwlCarousel className='owl-theme' margin={10}  {...options}>
-                        <div className='item'><img className="card-img-top mt-2" src={PostImg} alt="" /></div>
+                    <OwlCarousel className='owl-theme' margin={10} >
+                        <div className='item'  {...options}><img className="card-img-top mt-2" src={PostImg} alt="" /></div>
                     </OwlCarousel>
     
                     <div className="post_card_icon mt-3">

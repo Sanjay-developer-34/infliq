@@ -10,7 +10,8 @@ function Stories(props) {
   return (
         <div  className='Stories_content item' key={Math.random()}>
             <img src={story1} alt=''></img>
-            <p className=''>ashwadh_chowdary</p>
+            <p >ashwadh_a</p>
+            {/* <p >ashwadh chowdar</p> */}
         </div>
   )
 }

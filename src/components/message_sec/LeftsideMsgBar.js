@@ -61,6 +61,7 @@ function LeftsideMsgBar() {
               <div className="modal-content">
                 <div className="modal-header notification_header">
                   <h4 className="modal-title ">Notifications</h4>
+                  <i class="fa-solid fa-rectangle-xmark"></i>
                   <button type="button" className="btn-close" onClick={() => setNotificationModal(false)} data-bs-dismiss="modal"></button>
                 </div>
 

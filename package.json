@@ -1,7 +1,6 @@
 {
   "name": "infliq",
   "version": "0.1.0",
-  "homepage": "https://upnext1.com/portfolio/infliq/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",

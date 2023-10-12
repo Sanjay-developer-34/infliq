@@ -7,7 +7,7 @@ function Map() {
     return (
         <div className='map_section_parent'>
             <div className='explore_nav'>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <nav className="navbar navbar-expand-lg navbar-light bg-white border">
                     <div className="container-fluid">
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav explore_list">

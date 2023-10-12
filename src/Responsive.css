@@ -298,7 +298,12 @@
       
       
       /* =======RightsideBar css start====== */
-      
+    
+      .Rightside_bar{
+        display: none;
+      }
+
+
       .right_side_sec {
         align-items: end;
       }
@@ -349,6 +354,11 @@
         line-height: 16px;
         word-wrap: break-word;
         color: #262626;
+      }
+
+      .Profile i{
+        display: block;
+        
       }
       
       .Profile_text {

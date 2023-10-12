@@ -111,7 +111,7 @@ body {
 .Stories {
   gap: 22px;
   display: flex;
-  margin: auto;
+  margin: 0 0 0 22px;
   align-items: center;
 }
 
@@ -134,7 +134,7 @@ body {
 }
 
 .Stories .owl-stage {
-  width: 660px !important;
+  width: 580px !important;
   gap: 20px;
 }
 
@@ -226,6 +226,8 @@ body {
 .TrendingSec {
   background-color: #FFF4F5;
   padding: 15px;
+  border-radius: 15px;
+  margin-top: 20px;
 }
 
 .main_home_section {
@@ -350,6 +352,10 @@ body {
   color: #262626;
 }
 
+.Profile i{
+  display: none;
+}
+
 .Profile_text {
   margin: 0;
   color: black;
@@ -427,15 +433,27 @@ body {
 
 .post_modal .btn-close {
   margin-left: auto;
+  background-color: black;
+  opacity: 0.9;
+  font-size: 5px;
+  opacity: 0;
+}
+
+.post_modal_header i{
+  position: absolute;
+  right: 10px;
+  font-size: 20px;
+  top: 25px;
 }
 
 .post_modal .post_modal_header h4 {
-  margin-left: auto;
   color: black;
   font-size: 30px;
   font-family: Outfit, sans-serif;
   font-weight: 600;
-  word-wrap: break-word
+  word-wrap: break-word;
+  width: 70%;
+  text-align: end;
 }
 
 .post_modal .modal-header {
@@ -501,6 +519,20 @@ body {
   border-bottom: none;
 }
 
+.input_clear {
+  position: absolute;
+  right: 35px;
+  font-size: 8px;
+  top: 20px;
+  border: 1px solid;
+  padding: 3px;
+  border-radius: 50%;
+}
+
+.input_section{
+  position: relative;
+}
+
 .search_id {
   color: #262626;
   font-size: 15.67px;
@@ -513,6 +545,7 @@ body {
   padding: 6px 12px;
   border: none;
   border-radius: 8px;
+  width:90%;
 }
 
 .search_modal .modal-body {
@@ -827,7 +860,8 @@ body {
 .shorts_header {
   display: flex;
   justify-content: space-between;
-  padding: 20px 85px;
+  padding: 10px 85px;
+  margin: 10px 0;
 }
 
 .shorts_button {
@@ -844,7 +878,15 @@ body {
 
 .shorts_body {
   position: relative;
+  height: 850px;
+  overflow-y: auto;
 }
+
+.shorts_body::-webkit-scrollbar{
+  width: 0px;
+  height: 0px;
+}
+
 
 .shorts_body img {
   width: 100%;
@@ -1147,8 +1189,8 @@ body {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #8E8E8E;
-  ;
   padding-bottom: 10px;
+  margin: 0 13px;
 }
 
 button.btn.btns {
@@ -1164,7 +1206,7 @@ button.btn.btns {
 .body_items {
   background-color: rgba(250, 250, 250, 1);
   padding: 10px 10px;
-  margin-top: 12px;
+  margin: 12px;
 }
 
 .senders_profile {
@@ -1190,6 +1232,13 @@ p.senders_name {
 
 /* ====================Notification Modal================ */
 
+.notification_modal .modal-dialog {
+  transform: none;
+  position: absolute;
+  top: 160px;
+  padding: 0 70px 0 30px; 
+}
+
 
 .notification_header {
   color: #262626;
@@ -1198,6 +1247,15 @@ p.senders_name {
   font-weight: 700;
   line-height: 30px;
   word-wrap: break-word
+}
+
+.notification_header i{
+   position: absolute;
+   right: 15px;
+}
+
+.notification_header .btn-close{
+  opacity: 0;
 }
 
 .sub_heading {
@@ -1327,8 +1385,12 @@ img.followed_profile {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
+  padding: 20px 20px 5px 20px;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
+
 
 .explore_Profile{
   display: flex;

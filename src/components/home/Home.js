@@ -3,8 +3,6 @@ import Header from './header/Header'
 import LeftSideBar from './leftsidebar/LeftSideBar'
 import Post from './post/Post'
 import RightsideBar from './RightSide/RightsideBar'
-// import Feed from './feed/Feed'
-// import Post from './post/Post'
 
 function Home() {
   return (
@@ -17,7 +15,7 @@ function Home() {
           <div className='container-fluid'>
             <div className='row'> 
             <div className='col-lg-4'><LeftSideBar /></div>
-            <div className='col-md-7'>
+            <div className='col-md-8'>
                 <Post />
                 <Post />
                 <Post />
