@@ -2,7 +2,7 @@ import React from 'react'
 import story1 from '../../../images/stroy1.png'
 import photo_icon from '../../../images/post_something.png'
 import userimg from '../../../images/Frame.png'
-import { useState, useEffect } from 'react';
+import { useState, } from 'react';
 import { Link } from 'react-router-dom'
 
 
@@ -34,24 +34,7 @@ function RightsideBar() {
   };
 
     const [searchModal, setSearchModal] = useState(false);
- 
-
-    // useEffect(() => {
-    //     const closeModalOnClickOutside = (event) => {
-    //       const modal = document.getElementById('exampleModal');
-    //       if (searchModal && modal && !modal.contains(event.target)) {
-    //         setSearchModal(false);
-    //       }
-    //     };
-    
-    //     document.addEventListener('click', closeModalOnClickOutside);
-    
-    //     return () => {
-    //       document.removeEventListener('click', closeModalOnClickOutside);
-    //     };
-    //   }, [searchModal]);
-
-
+   
     return (
 
 
@@ -79,7 +62,7 @@ function RightsideBar() {
                                     Home</Link></button>
                             </li>
                             <li>
-                                <button className='RS_btn' onClick={()=>{setSearchModal(true)}}><i className="fa-solid fa-magnifying-glass"></i>
+                                <button className='RS_btn'  id='search_btn' onClick={()=>{setSearchModal(true)}}><i className="fa-solid fa-magnifying-glass"></i>
                                     Search</button>
                             </li>
                             <li>

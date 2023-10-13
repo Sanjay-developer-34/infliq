@@ -9,7 +9,7 @@ function Shorts() {
                 <div className='col-lg-12'>
                     <div className='shorts_sec_content'>
                         <div className='shots_items '>
-                            <div className='shorts_header'>
+                            <div className='shorts_header border'>
                                 <button type='button' className='shorts_button'>FOLLOWING</button>
                                 <button type='button' className='shorts_button'>SUGGESTIONS</button>
                             </div>

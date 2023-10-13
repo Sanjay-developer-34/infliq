@@ -860,7 +860,7 @@ body {
 .shorts_header {
   display: flex;
   justify-content: space-between;
-  padding: 10px 85px;
+  padding: 15px 85px;
   margin: 10px 0;
 }
 
@@ -1375,6 +1375,7 @@ img.followed_profile {
 
 .map_sec img{
   width: 585px;
+  height: 650px;
 }
 
 .explore_list{

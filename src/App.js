@@ -21,6 +21,7 @@ function App() {
         <Route path='/home' element={<Home/>} />
         <Route path='/Explore_page' element={<Explore/>} />
         <Route path='/Shorts' element={<Reels/>} />
+        <Route path='/reels' element={<Reels/>} />
         <Route path='/profile' element={<Profile/>}/>
         <Route path='/edit_profile' element={<EditProfile/>}/>
         <Route path='/message' element={<Message/>}/>

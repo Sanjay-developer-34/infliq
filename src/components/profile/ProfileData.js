@@ -46,7 +46,7 @@ function ProfileData() {
                 </li>
                 <li className="nav-item profile_data_nav_list">
                   <i className="fa-brands fa-youtube"></i>
-                  <a className="nav-link" href=" ">SHORTS</a>
+                  <Link to='/reels'><a className="nav-link" href=" ">SHORTS</a></Link>
                 </li>
                 <li className="nav-item profile_data_nav_list">
                   <i className="fa-regular fa-bookmark"></i>
