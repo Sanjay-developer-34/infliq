@@ -299,8 +299,42 @@
       
       /* =======RightsideBar css start====== */
     
+      .responsive_icon{
+        position: relative;
+      }
+      
+      .responsive_icon label{
+        position: absolute;
+        display: block;
+      }
+      
+      .responsive_icon i{
+        position: absolute;
+        display: block;
+      }
+
+      #chk :checked +.Rightside_bar{
+        right: 0;
+      }
+      
+      .responsive_icon input{
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        opacity: 0;
+      }
+
+
       .Rightside_bar{
-        display: none;
+        position: fixed;
+        top: 0;
+        right: -100px; /* Menu initially hidden off the screen */
+        width: 200px;
+        height: 100%;
+        background-color: #333;
+        color: #fff;
+        transition: right 0.3s; /* Animation duration */
+        z-index: 1;
       }
 
 

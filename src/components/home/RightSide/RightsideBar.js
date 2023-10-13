@@ -36,9 +36,10 @@ function RightsideBar() {
     const [searchModal, setSearchModal] = useState(false);
    
     return (
+        <>
+       
 
-
-        <section className=' right_side_sec pt-3'>
+        <section id=' right_side_sec pt-3'>
             <div className=''>
                 <div className='Rightside_bar'>
                     <div className='RS_bar_content'>
@@ -210,6 +211,7 @@ function RightsideBar() {
             </div>
 
         </section>
+        </>
     )
 }
 

@@ -300,6 +300,27 @@ body {
 
 /* =======RightsideBar css start====== */
 
+.responsive_icon{
+  position: relative;
+}
+
+.responsive_icon label{
+  position: absolute;
+  display: none;
+}
+
+.responsive_icon i{
+  position: absolute;
+  display: none;
+}
+
+.responsive_icon input{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+}
+
 .right_side_sec {
   align-items: end;
 }
