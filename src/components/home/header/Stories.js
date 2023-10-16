@@ -6,11 +6,11 @@
 // import story5 from '../images/stroy5.png'
 // import story6 from '../images/story6.png'
 
-function Stories(props) {
+function Stories({imgsrc}) {
   return (
         <div  className='Stories_content item' key={Math.random()}>
-            <img src={story1} alt=''></img>
-            <p >ashwadh_a</p>
+            <img src={imgsrc} alt=''></img>
+            <p >ashwadh_</p>
             {/* <p >ashwadh chowdar</p> */}
         </div>
   )

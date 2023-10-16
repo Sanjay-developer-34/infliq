@@ -108,6 +108,10 @@ body {
   display: flex;
 }
 
+.menu_btn {
+  display: none;
+}
+
 .Stories {
   gap: 22px;
   display: flex;

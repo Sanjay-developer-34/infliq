@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, navigate , useNavigate} from "react-router-dom";
 import layer1 from "../images/Layer 1.png";
+import axios from 'axios';
+
+
+
 export const LogIn = () => {
   const [email, setEmail] = useState(" ");
   const [password, setPassword] = useState(" ");
   const [message,setMessage]=useState('');
+  const navigate=useNavigate();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -21,7 +26,24 @@ export const LogIn = () => {
         'password':password
     }
     setMessage("You have logged in successfully")
-    console.log(userData);
+    console.log(userData)
+   
+
+    axios.post('http://3.88.144.157:8000/auth/email_login/', userData)
+  .then((res)=>{
+     if(res.data.status){
+
+     navigate('/')
+
+     } else{
+
+         setMessage("error")
+      
+     }
+  }).catch((error)=>{
+    console.log(error)
+  })
+
   };
 
   return (

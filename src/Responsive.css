@@ -103,11 +103,64 @@
       
       
       
-      /* =====Header section css Start */
+      /* =====Header section css Start =======*/
       
       .header {
         display: flex;
       }
+
+      .menu_btn {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+    }
+
+    #chk{
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: 68px;
+      opacity: 1;
+  }
+
+
+  .menu_btn label{
+    position: absolute;
+    display: block;
+  }
+  
+  .menu_btn i{
+    display: block;
+  }
+
+  .Rightside_bar {
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* When the checkbox is checked, show the right-side bar */
+#chk:checked + .Rightside_bar{
+    transform: translateX(0);
+}
+
+
+  .Rightside_bar{
+    display: block;
+    position: fixed;
+    right: 20px;
+    top: 60px;
+    cursor: pointer;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 999;
+}
+
+    .NewLogo {
+      display: flex;
+      justify-content: space-between;
+  }
       
       .Stories {
         gap: 22px;
@@ -151,322 +204,30 @@
       
       
       /* =====suggestions section  Css Start */
-      .heading {
-        color: #8E8E8E;
-        font-size: 14.94px;
-        font-family: Outfit, sans-serif;
-        font-weight: 600;
-        line-height: 19.21px;
-        word-wrap: break-word
-      }
-      
-      .Suggestions_body {
-        margin: 30px 0;
-      }
-      
-      .Sugg_main {
-        display: flex;
-        margin: 0 0 15px 10px;
-      }
-      
-      .sugg_p1 {
-        color: black;
-        font-size: 14.94px;
-        font-family: Outfit, sans-serif;
-        font-weight: 600;
-        line-height: 19.21px;
-        word-wrap: break-word;
-        margin: 0;
-      }
-      
-      .sugg_p2 {
-        color: #8E8E8E;
-        font-size: 11.54px;
-        font-family: Outfit, sans-serif;
-        line-height: 19.21px;
-        word-wrap: break-word;
-        margin: 0;
-      }
-      
-      .sugg_content {
-        gap: 20px;
-        display: flex;
-      }
-      
-      .sugg_content img {
-        border-radius: 50%;
-        height: fit-content;
-      }
-      
-      .follow_btn {
-        color: black;
-        font-size: 12.8px;
-        font-family: Outfit, sans-serif;
-        font-weight: 600;
-        line-height: 17.08px;
-        word-wrap: break-word;
-        margin-left: auto;
-        display: grid;
-        align-items: center;
-      }
-      
-      .follow {
-        margin-bottom: 0;
-      }
-      
-      .foot_btn {
-        font-size: 16px;
-        font-weight: 600;
-        border: none;
-        background: none;
-      }
+      .Suggestions {
+        width: 70%;
+        margin: 0 auto;
+    }
       
       
       
       /* ========Trending sec Css Start========= */
       .TrendingSec {
-        background-color: #FFF4F5;
-        padding: 15px;
-      }
-      
-      .main_home_section {
-        padding-top: 25px;
-      }
-      
-      .trend_heading {
-        color: #0F1419;
-        font-size: 19px;
-        font-family: Outfit, sans-serif;
-        font-weight: 700;
-        line-height: 24px;
-        word-wrap: break-word
-      }
-      
-      .trending_content {
-        display: flex;
-      }
-      
-      .Trend_img {
-        margin-left: auto;
-        padding: 15px;
-      }
-      
-      .Trend_img img {
-        width: 68px;
-        height: 68px;
-        border-radius: 20px;
-      }
-      
-      .ul_items {
-        display: flex;
-        gap: 30px;
-        list-style: none;
-        color: #536471;
-        font-size: 13px;
-        font-family: Segoe UI;
-        font-weight: 400;
-        line-height: 16px;
-        word-wrap: break-word;
-        margin: 0;
-      }
-      
-      .list_items {
-        list-style: disc;
-      }
-      
-      .trend_content ul {
-        padding: 0;
-      }
-      
-      .trend_content {
-        margin-top: 24px;
-      }
-      
-      .trend_content p {
-        color: #0F1419;
-        font-size: 15px;
-        font-family: Segoe UI;
-        font-weight: 700;
-        line-height: 20px;
-        word-wrap: break-word;
-        margin: 0;
-      }
-      
-      .Trend_footer {
-        margin-top: 16px;
-      }
+        width: 70%;
+        margin: 20px auto;
+    }
       
       
       /* =======RightsideBar css start====== */
+
+
     
-      .responsive_icon{
-        position: relative;
-      }
-      
-      .responsive_icon label{
-        position: absolute;
-        display: block;
-      }
-      
-      .responsive_icon i{
-        position: absolute;
-        display: block;
-      }
-
-      #chk :checked +.Rightside_bar{
-        right: 0;
-      }
-      
-      .responsive_icon input{
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        opacity: 0;
-      }
-
-
-      .Rightside_bar{
-        position: fixed;
-        top: 0;
-        right: -100px; /* Menu initially hidden off the screen */
-        width: 200px;
-        height: 100%;
-        background-color: #333;
-        color: #fff;
-        transition: right 0.3s; /* Animation duration */
-        z-index: 1;
-      }
-
-
-      .right_side_sec {
-        align-items: end;
-      }
-      
-      .RS_bar_content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      
-      .RS_btn a i {
-        margin-left: 0;
-        margin-right: 10px;
-      }
-      
-      .Username p {
-        margin: 0;
-      }
-      
-      .name {
-        color: #262626;
-        font-size: 14px;
-        font-family: Outfit, sans-serif;
-        font-weight: 600;
-        line-height: 18px;
-        word-wrap: break-word
-      }
-      
-      .uname {
-        color: #8E8E8E;
-        font-size: 14px;
-        font-family: Outfit, sans-serif;
-        font-weight: 400;
-        line-height: 18px;
-        word-wrap: break-word
-      }
-      
-      .RS_left_content {
-        display: flex;
-        gap: 20px;
-        align-items: center;
-      }
-      
-      .Profile {
-        font-size: 11px;
-        font-family: Outfit, sans-serif;
-        font-weight: 600;
-        line-height: 16px;
-        word-wrap: break-word;
-        color: #262626;
-      }
-
-      .Profile i{
-        display: block;
-        
-      }
-      
-      .Profile_text {
-        margin: 0;
-        color: black;
-      }
-      
-      .Profile a{
-        text-decoration: none;
-      }
-      
-      .RS_list_items {
-        list-style: none;
-        margin-top: 20px;
-        padding-left: 0;
-      }
-      
-      .RS_btn {
-        border: none;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        background: none;
-      }
-      
-      .RS_list_items li {
-        margin-bottom: 15px;
-      }
-      
-      .RS_list_items a {
-        color: #0F1419;
-        text-decoration: none;
-        margin-left: 16px;
-      }
-      
-      .RS_bar_img img {
-        width: 42px;
-        height: 42px;
-      }
-      
-      .RS_list_items i {
-        margin-left: 15px;
-      }
       
       
       /* =====Open modal Css start====== */
       
       
-      .post_section .owl-carousel .owl-nav.disabled{
-        display: block;
-      }
-      
-      .owl-theme .owl-dots {
-        display: none;
-      }
-      
-      .post_section .owl-nav.disabled span {
-        color: white;
-        font-size: 50px;
-      }
-      .post_section button.owl-prev {
-        position: absolute;
-        top: 40%;
-        left: 0;
-      }
-      .post_section button.owl-next {
-        position: absolute;
-        top: 40%;
-        right: 0;
-      }
-      
-      .post_section .owl-item{
-        width: 481px !important;
-      }
+     
       
       
       

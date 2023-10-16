@@ -1,7 +1,13 @@
 import React, { useState, useEffect} from "react";
 import image5 from "../images/image 5.png";
 import layer1 from "../images/Layer 1.png";
-import { Link } from "react-router-dom";
+import { Link , Navigate, useNavigate} from "react-router-dom";
+import axios from 'axios';
+
+
+
+
+
 export const SignUp = () => {
 
    const [email, setEmail]=useState(' ');
@@ -9,6 +15,7 @@ export const SignUp = () => {
    const [username, setUsername]=useState(' ');
    const [password, setPassword]=useState(' ');
    const [message, setMessage ]= useState(' ');
+   const navigate= useNavigate();
 
    const handleEmailChange=(e)=>{
       setEmail(e.target.value);
@@ -35,7 +42,22 @@ export const SignUp = () => {
          'password': password
       }
       setMessage("you have succefully registered")
-      console.log(userData);
+      console.log(userData)
+
+  axios.post('http://3.88.144.157:8000/auth/register/', userData)
+      .then((res)=>{
+        if(res.data.status){
+
+          navigate('/login')
+
+        } else{
+          setMessage('registration failed')
+        }
+      }).catch((error)=>{
+        console.log(error)
+      })
+    
+
    };
 
 

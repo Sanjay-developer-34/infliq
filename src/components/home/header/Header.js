@@ -15,14 +15,21 @@ function Header() {
           <div className='col-lg-4'>
             <div className='NewLogo'>
               <img src={NewLogo} alt=""></img>
+              <div className='menu_btn'>
+                <i className="fa-solid fa-bars"></i>
+                <input type='checkbox' id='chk' className='checking'></input>
+                <lable for='chk'>Menu</lable>
+              </div>
             </div>
+           
           </div>
+         
           <div className='col-lg-8'>
             <div className='Stories mt-3'>
-              <OwlCarousel className='owl-theme' margin={1} item={2}>
+              <OwlCarousel className='owl-theme' margin={1} items={2}>
                 {StoryData.map((item,index) => <Stories key={index} imgsrc={item.imgsrc} />)}
               </OwlCarousel>
-
+            
             </div>
           </div>
         </div>
