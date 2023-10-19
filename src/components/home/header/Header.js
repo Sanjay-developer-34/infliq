@@ -7,7 +7,7 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css'
 
 
-function Header() {
+function Header({ toggleSidebar }) {
   return (
     <div className='header'>
       <div className='container-fluid'>
@@ -17,7 +17,7 @@ function Header() {
               <img src={NewLogo} alt=""></img>
               <div className='menu_btn'>
                 <i className="fa-solid fa-bars"></i>
-                <input type='checkbox' id='chk' className='checking'></input>
+                <input type='checkbox' id=' toggleSidebar ' onChange={ toggleSidebar } className='checking'></input>
                 <lable for='chk'>Menu</lable>
               </div>
             </div>

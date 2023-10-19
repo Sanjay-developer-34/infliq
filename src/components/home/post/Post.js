@@ -13,9 +13,9 @@ import 'owl.carousel/dist/assets/owl.theme.default.css'
 function Post() {
 
     const options = {
-        items: 3, // Number of items to display in the carousel
-        // loop: true, // Enable loop mode
-        autoplay: false, // Autoplay the carousel
+        // Number of items to display in the carousel
+        loop: true, // Enable loop mode
+        autoplay: true, // Autoplay the carousel
       };
     
 
@@ -37,7 +37,7 @@ function Post() {
                             <i className="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     </div>
-                    <OwlCarousel className='owl-theme' margin={10} >
+                    <OwlCarousel className='owl-theme'  items={3} margin={1} >
                         <div className='item'  {...options}><img className="card-img-top mt-2" src={PostImg} alt="" /></div>
                     </OwlCarousel>
     

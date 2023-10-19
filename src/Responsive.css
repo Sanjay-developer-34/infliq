@@ -133,29 +133,26 @@
     display: block;
   }
 
+
   .Rightside_bar {
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-}
-
-/* When the checkbox is checked, show the right-side bar */
-#chk:checked + .Rightside_bar{
-    transform: translateX(0);
-}
-
-
-  .Rightside_bar{
-    display: block;
     position: fixed;
-    right: 20px;
-    top: 60px;
-    cursor: pointer;
-    background-color: #fff;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    z-index: 999;
-}
+    top: 0;
+    right: -250px; /* Initially hidden to the right */
+    width: 250px;
+    height: 100%;
+    background-color: #f0f0f0;
+    transition: right 0.3s;
+  }
+  
+  /* Styles for your checkbox */
+  #toggleSidebar {
+    display: none;
+  }
+  
+  /* When the checkbox is checked, slide the sidebar into view */
+  #toggleSidebar:checked + .Rightside_bar {
+    right: 0;
+  }
 
     .NewLogo {
       display: flex;
@@ -176,7 +173,7 @@
       
       .Stories_content img {
         width: 45px !important;
-        height: 45px;
+        height: 45px !important;
       }
       
       .Stories_content {
@@ -195,6 +192,19 @@
       .Stories .owl-carousel.owl-drag .owl-item {
         width: 91px !important;
         margin-right: 0;
+      }
+
+      .owl-carousel{
+        width: 100%;
+      }
+
+      .post_section .owl-item {
+        width: 512px !important;
+    }
+
+      .owl-carousel img {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
       }
       
       .Stories .owl-theme .owl-dots {

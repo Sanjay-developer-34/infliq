@@ -1,51 +1,63 @@
-import React, { useEffect, useState } from "react";
-import { Link, navigate , useNavigate} from "react-router-dom";
+import React, { useState } from "react";
+import { Link , useNavigate} from "react-router-dom";
 import layer1 from "../images/Layer 1.png";
 import axios from 'axios';
+import { useFormik } from "formik";
+import { loginSchema } from "./schemas";
 
+// const validate = values => {
+//   const errors = {};
 
+//   if (!values.password) {
+//     errors.password = 'Required';
+//   } else if (values.password.length < 8) {
+//     errors.password = 'Minimum 8 character required';
+//   }
+
+//   if (!values.email) {
+//     errors.email = 'Required';
+//   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+//     errors.email = 'Invalid email address';
+//   }
+//   return errors;
+// };
 
 export const LogIn = () => {
-  const [email, setEmail] = useState(" ");
-  const [password, setPassword] = useState(" ");
-  const [message,setMessage]=useState('');
-  const navigate=useNavigate();
+ 
+  const [message, setMessage ]= useState(' ');
+  const navigate=useNavigate('')
+  const {values, errors, touched, handleBlur,  handleChange, handleSubmit}= useFormik({
+     initialValues:{
+        email: '',
+        password: ''
+     },
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
+     validationSchema: loginSchema,
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
+     onSubmit: values => {
+       alert(JSON.stringify(values, null, 2));
+       setMessage("you have succefully logged in ");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const userData={
-        'userEmail':email,
-        'password':password
-    }
-    setMessage("You have logged in successfully")
-    console.log(userData)
-   
+       // const axios = require('axios');
 
-    axios.post('http://3.88.144.157:8000/auth/email_login/', userData)
-  .then((res)=>{
-     if(res.data.status){
+       axios.post('http://3.88.144.157:8000/auth/email_login/', values)
+       .then((res)=>{
+         if(res.value.status){
+    
+         navigate('/')
+    
+         } else{
+    
+             setMessage("login failed")
+          
+         }
+      }).catch((errors)=>{
+        console.log(errors)
+      })
+     }, 
 
-     navigate('/')
-
-     } else{
-
-         setMessage("error")
-      
-     }
-  }).catch((error)=>{
-    console.log(error)
-  })
-
-  };
-
+     });
+ 
   return (
     <div className="App Signup_sec">
       <div className="Main_logo">
@@ -58,21 +70,28 @@ export const LogIn = () => {
             <input
               type=" text"
               id="email"
+              name="email"
               placeholder="Enter Phone or Email"
-              className="form-control input"
-              onChange={handleEmailChange}
-              value={email}
+              className=" input"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.email}
             ></input>
+             {errors.email && touched.email ? (<p className="form-error">{errors.email}</p>) : ('')}
           </div>
           <div className="form-group main">
             <input
               type=" password"
               id="password"
+              name="password"
               placeholder="Enter password"
-              className="form-control input"
-              onChange={handlePasswordChange}
-              value={password}
+              className=" input"
+              value={values.password}
+              onBlur={handleBlur}
+              onChange={handleChange}
             ></input>
+            { errors.password && touched.password ? 
+            (<p className="form-error">{errors.password}</p>) : null}
           </div>
           <div>
             <p className="LogIn_p">forgot password?</p>

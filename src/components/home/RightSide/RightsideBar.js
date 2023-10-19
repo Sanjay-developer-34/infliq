@@ -6,7 +6,7 @@ import { useState, } from 'react';
 import { Link } from 'react-router-dom'
 
 
-function RightsideBar() {
+function RightsideBar({ sidebarVisible }) {
 
 
     const [showModal, setShowModal] = useState(false);
@@ -41,7 +41,7 @@ function RightsideBar() {
 
         <section id=' right_side_sec pt-3'>
             <div className=''>
-                <div className='Rightside_bar'>
+                <div className={`Rightside_bar  ${ sidebarVisible ? 'show' : '' }`}>
                     <div className='RS_bar_content'>
                         <div className='RS_left_content'>
                             <div className='RS_bar_img'>
