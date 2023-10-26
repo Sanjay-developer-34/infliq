@@ -32,7 +32,8 @@ import { SignupSchema } from "./schemas";
 export const SignUp = () => {
 
    const [message, setMessage ]= useState(' ');
-    // const navigate=useNavigate();
+
+    const navigate=useNavigate();
    const {values, errors, touched, handleBlur, handleChange, handleSubmit }= useFormik({
       initialValues:{
 
@@ -51,10 +52,11 @@ export const SignUp = () => {
         // setMessage("you have succefully registered");
 
         // const axios = require('axios');
-
+        console.log(values);
         axios.post('http://3.88.144.157:8000/auth/register/', values)
         .then((response)=>{
               console.log(response); 
+              // navigate(/login);
        }).catch((error)=>{
          console.log(error)
        })

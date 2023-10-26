@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PostImg from '../../../images/post_img.png'
 import story1 from '../../../images/stroy1.png'
 import post_icons from '../../../images/post_foot-icon.svg'
@@ -8,15 +8,27 @@ import post_foot_icons3 from '../../../images/post_foot_icon.svg'
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css'
+import axios from 'axios'
 
 
 function Post() {
+
+    // const [mydata, setMydata]=useState([]);
 
     const options = {
         // Number of items to display in the carousel
         loop: true, // Enable loop mode
         autoplay: true, // Autoplay the carousel
       };
+
+    //   const getApiData = async()=>{
+    //     const res= await axios.post("http://3.88.144.157:8000/api/user_post_create");
+    //     setMyData(res.data);
+    //   }
+
+    //   useEffect(()=>{
+    //     getApiData();
+    //   },[]);
     
 
 

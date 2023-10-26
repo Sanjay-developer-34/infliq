@@ -2,6 +2,8 @@ import React from 'react'
 import story1 from '../../images/stroy1.png'
 import Logout from '../../images/logout.png'
 
+
+
 function EditProfileData() {
     return (
         <div className='edit_profile'>
@@ -17,6 +19,7 @@ function EditProfileData() {
                                     <p className='uname text_muted'>ashwadh_chowdary</p>
                                     <p className='change_profile'>Change profile photo</p>
                                 </div>
+                                
                             </div>
                             <div className='input_field '>
                                 <div className='input_heading'>Name</div>

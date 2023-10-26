@@ -7,7 +7,6 @@ import { loginSchema } from "./schemas";
 
 // const validate = values => {
 //   const errors = {};
-
 //   if (!values.password) {
 //     errors.password = 'Required';
 //   } else if (values.password.length < 8) {
@@ -42,7 +41,7 @@ export const LogIn = () => {
 
        axios.post('http://3.88.144.157:8000/auth/email_login/', values)
        .then((res)=>{
-         if(res.value.status){
+         if(res.data.status){
     
          navigate('/')
     

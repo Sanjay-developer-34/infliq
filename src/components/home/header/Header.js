@@ -1,13 +1,19 @@
-import React from 'react'
+import React  from 'react'
 import NewLogo from '../../../images/NewLogo 1.png'
 import Stories from './Stories';
 import StoryData from './StoryData';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css'
-
+import { useCheckbox } from '../../context/CheckboxContext';
+import RightsideBar from '../RightSide/RightsideBar';
+import { useState } from 'react'
 
 function Header({ toggleSidebar }) {
+
+  const { isChecked, toggleCheckbox } = useCheckbox();
+  const [isRightSidebarVisible, setRightSidebarVisible] = useState(false);
+
   return (
     <div className='header'>
       <div className='container-fluid'>
@@ -17,9 +23,14 @@ function Header({ toggleSidebar }) {
               <img src={NewLogo} alt=""></img>
               <div className='menu_btn'>
                 <i className="fa-solid fa-bars"></i>
-                <input type='checkbox' id=' toggleSidebar ' onChange={ toggleSidebar } className='checking'></input>
+                <input type='checkbox' id=' toggleSidebar ' checked={isChecked}  onChange={() => {
+            toggleCheckbox();
+            setRightSidebarVisible(!isRightSidebarVisible);
+          }} className='checking'></input>
                 <lable for='chk'>Menu</lable>
               </div>
+
+              <RightsideBar sidebarVisible={isRightSidebarVisible} />
             </div>
            
           </div>

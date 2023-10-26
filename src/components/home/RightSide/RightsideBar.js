@@ -4,6 +4,7 @@ import photo_icon from '../../../images/post_something.png'
 import userimg from '../../../images/Frame.png'
 import { useState, } from 'react';
 import { Link } from 'react-router-dom'
+import Header from '../header/Header';
 
 
 function RightsideBar({ sidebarVisible }) {
@@ -42,6 +43,7 @@ function RightsideBar({ sidebarVisible }) {
         <section id=' right_side_sec pt-3'>
             <div className=''>
                 <div className={`Rightside_bar  ${ sidebarVisible ? 'show' : '' }`}>
+                <Header />
                     <div className='RS_bar_content'>
                         <div className='RS_left_content'>
                             <div className='RS_bar_img'>

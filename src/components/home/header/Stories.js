@@ -7,12 +7,21 @@
 // import story6 from '../images/story6.png'
 
 function Stories({imgsrc}) {
+  
+const storyData={
+  media_type:'',
+  file: '',
+  text:''
+  
+}
+
   return (
         <div  className='Stories_content item' key={Math.random()}>
             <img src={imgsrc} alt=''></img>
             <p >ashwadh_</p>
             {/* <p >ashwadh chowdar</p> */}
         </div>
+
   )
 }
 
