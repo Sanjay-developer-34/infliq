@@ -53,20 +53,33 @@ function Header() {
     fileInputRef.current.click();
   };
 
+
+  const [selectedfile, setSelectedfile] = useState(null);
   const handlestoryChange = (e) => {
     // Handle the file selection here
-    const story = e.target.files[0];
-    if (story) {
-      setStory(URL.createObjectURL(story));
+   
+    const file = e.target.files[0];
+    if (file) {
+      setStory(URL.createObjectURL(file));
+      setSelectedfile(URL.createObjectURL(file));
+      // setShowModal('true');
     } // You can perform additional actions with the selected file here
+  };
+
+  // -----------Reset the modal--------------//
+
+  const resetModal = () => {
+    setShowModal(false);
+    setSelectedfile(null);
+    setStory();
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Create a FormData object to send the image file
+    // Create a FormData object to send the file file
     const formData = new FormData();
-    formData.append("image", story);
+    formData.append("file", story);
   };
 
   
@@ -83,14 +96,17 @@ function Header() {
             <div className="col-lg-8">
               <div className="Stories mt-3">
                 <OwlCarousel className="owl-theme" margin={1} items={2}>
-                  <div className="Stories_content item" key={Math.random()}>
-                    <img
-                      onclick={()=>setShowModal(true)}
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Font_Awesome_5_solid_user-plus.svg/1279px-Font_Awesome_5_solid_user-plus.svg.png"
-                      alt=""
-                    ></img>
+                  <div    className="Stories_content item" key={Math.random()}>
+                  {selectedfile ? (
+                      <img src={selectedfile} alt="Uploaded" onClick={()=>setShowModal(true)} />
+                    ) : (
+                      <img
+                        onClick={()=>setShowModal(true)}
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Font_Awesome_5_solid_user-plus.svg/1279px-Font_Awesome_5_solid_user-plus.svg.png"
+                        alt=""
+                      />
+                    )}
                     <p>Your Story</p>
-                    {/* <p >ashwadh chowdar</p> */}
                   </div>
                   {StoryData.map((item, index) => (
                     <Stories
@@ -110,70 +126,73 @@ function Header() {
       {/* --------------------Modal for story----------------------- */}
 
       <div
-  className={`modal fade${showModal ? "show" : ""}`}
-  tabIndex="-1"
-  role="dialog"
-  style={{ display: showModal ? "block" : "none" }}
->
-  <div className="story_modal">
-    <div className="modal-dialog">
-      <div className="modal-content">
-        <div className="modal-header story_modal_header">
-          <h4 className="modal-title modal_heading">Create a story</h4>
+        className={`modal fade${showModal ? "show" : ""}`}
+        tabIndex="-1"
+        role="dialog"
+        style={{ display: showModal ? "block" : "none" }}
+      >
+        <div className="post_modal">
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header post_modal_header">
+                <h4 className="modal-title modal_heading">Create a story</h4>
 
-          {story ? (
-            <button
-              type="button"
-              className="story_button"
-              onclick={handleSubmit}
-              accept="image/*"
-            >
-              <i className="fa-solid fa-check"></i>
-            </button>
-          ) : (
-            <i class="fa-solid fa-rectangle-xmark"></i>
-          )}
-          <button
-            type="button"
-            className="btn-close"
-            onClick={() => setShowModal(false)}
-            data-bs-dismiss="modal"
-          >
+                {story ? (
+                  <button
+                    type="button"
+                    className="post_button"
+                    onclick={setSelectedfile}
+                    accept="file/*"
+                  >
+                    <i className="fa-solid fa-check"></i>
+                  </button>
+                ) : (
+                  <i class="fa-solid fa-rectangle-xmark"></i>
+                )}
+                <button
+                  type="button"
+                  className="btn-close"
+                  onClick={() => setShowModal(false)}
+                  data-bs-dismiss="modal"
+                >
 
-          </button>
-        </div>
-        <div className="modal-body">
-          <img src={photo_icon} alt=""></img>
-          <p>Drag Photos or Videos here</p>
-        </div>
-
-        <div className="modal-footer">
-          <div>
-            <input
-              type="file"
-              ref={fileInputRef}
-              style={{ display: "none" }}
-              onChange={handlestoryChange}
-              accept="image/*"
-            />
-            <button
-              type="button"
-              onClick={handleButtonClick}
-              className="btn select_btn"
-            >
-              Select from computer
-            </button>
-            {story && (
-              <div className="selected_file">
-                <img src={story} alt="Selected Preview" />
+                </button>
               </div>
-            )}
+              <div className="modal-body">
+                <img src={photo_icon} alt=""></img>
+                <p>Drag Photos or Videos here</p>
+              </div>
+
+              <div className="modal-footer">
+                <div>
+                  <input
+                    type="file"
+                    ref={fileInputRef}
+                    style={{ display: "none" }}
+                    onChange={handlestoryChange}
+                    accept="file/*"
+                  />
+
+                  <button
+                    type="button"
+                    onClick={handleButtonClick}
+                    className="btn select_btn"
+                  >
+                    Select from computer
+                  </button>
+                  
+                  {story && (
+                    <div className="selected_file">
+                      <img src={story} alt="Selected Preview" />
+                    </div>
+                  )}
+                   
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
     </>
   );
 }

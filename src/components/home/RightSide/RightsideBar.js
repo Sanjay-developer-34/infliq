@@ -18,7 +18,7 @@ function RightsideBar() {
   //  for  selecting files from system
 
   const fileInputRef = React.createRef();
-  const [post, setpost] = useState("");
+  const [post, setPost] = useState("");
 
   const handleButtonClick = () => {
     // Trigger the click event on the file input when the button is clicked
@@ -29,7 +29,7 @@ function RightsideBar() {
     // Handle the file selection here
     const post = e.target.files[0];
     if (post) {
-      setpost(URL.createObjectURL(post));
+      setPost(URL.createObjectURL(post));
     } // You can perform additional actions with the selected file here
   };
 

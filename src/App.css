@@ -1556,3 +1556,8 @@ line-height: 18px;
 word-wrap: break-word
 }
 
+.reset{
+  z-index: 1;
+  position: absolute;
+  right:0;
+}
