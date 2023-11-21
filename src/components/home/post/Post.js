@@ -63,7 +63,7 @@ const Accesstoken='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNj
                     <div className='post_header'>
                         <div className='post_profile'>
                             <img src={story1} alt='' className='post_img' />
-                            <p className='username'>ashwadh_chowdary</p>
+                            <p className='username'>{allPost.results.first_name}</p>
                             <ul className='post_list_item'>
                                 <li className='text-muted' >20 m ago</li>
                             </ul>

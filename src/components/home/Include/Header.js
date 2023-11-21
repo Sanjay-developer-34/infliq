@@ -6,7 +6,6 @@ import photo_icon from '../../../images/post_something.png';
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-import { useCheckbox } from "../../Contexts/CheckboxContext";
 import InnerHeader from "./InnerHeader";
 import { useEffect, useContext } from "react";
 import axios from "axios";
@@ -54,25 +53,19 @@ function Header() {
   };
 
 
-  const [selectedfile, setSelectedfile] = useState(null);
+  // const [selectedfile, setSelectedfile] = useState(null);
   const handlestoryChange = (e) => {
     // Handle the file selection here
    
     const file = e.target.files[0];
     if (file) {
       setStory(URL.createObjectURL(file));
-      setSelectedfile(URL.createObjectURL(file));
+      // setSelectedfile(URL.createObjectURL(file));
       // setShowModal('true');
     } // You can perform additional actions with the selected file here
   };
 
-  // -----------Reset the modal--------------//
-
-  const resetModal = () => {
-    setShowModal(false);
-    setSelectedfile(null);
-    setStory();
-  };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -97,15 +90,13 @@ function Header() {
               <div className="Stories mt-3">
                 <OwlCarousel className="owl-theme" margin={1} items={2}>
                   <div    className="Stories_content item" key={Math.random()}>
-                  {selectedfile ? (
-                      <img src={selectedfile} alt="Uploaded" onClick={()=>setShowModal(true)} />
-                    ) : (
+                 
                       <img
                         onClick={()=>setShowModal(true)}
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Font_Awesome_5_solid_user-plus.svg/1279px-Font_Awesome_5_solid_user-plus.svg.png"
                         alt=""
                       />
-                    )}
+                    
                     <p>Your Story</p>
                   </div>
                   {StoryData.map((item, index) => (
@@ -141,8 +132,8 @@ function Header() {
                   <button
                     type="button"
                     className="post_button"
-                    onclick={setSelectedfile}
                     accept="file/*"
+                    onClick={handleSubmit}
                   >
                     <i className="fa-solid fa-check"></i>
                   </button>

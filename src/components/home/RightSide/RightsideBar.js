@@ -28,6 +28,10 @@ function RightsideBar() {
   const handlePostChange = (e) => {
     // Handle the file selection here
     const post = e.target.files[0];
+    
+    console.log(post)
+    console.log('post submitting')
+  
     if (post) {
       setPost(URL.createObjectURL(post));
     } // You can perform additional actions with the selected file here
@@ -41,33 +45,42 @@ function RightsideBar() {
 
   console.log(state);
 
-  useEffect(() => {}, [state]);
+  useEffect(() => { }, [state]);
 
   // API for create single post ============
   const accessToken = state.user.access;
+  console.log('post submitting')
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    // Create a FormData object to send the image file
-    const formData = new FormData();
-    formData.append("image", post);
-
-    // Make the POST request using Axios
+  const handlePostSubmit = async (post) => {
+    
     try {
+      console.log('submitting.....')
+      const formData = new FormData();
+      formData.append('description', 'post description');
+      formData.append('gps_data', 'GPS Coordinates Here');
+      formData.append('clarified', 'false');
+      formData.append('category', '4');
+      formData.append('area', 'Sample Area');
+      formData.append('tagged_user_ids', '126');
+      formData.append("attachments", post);
+      formData.append("file_type", 2);
+      formData.append("attachments", post);
+      formData.append("file_type", 2);
+
+      const config = {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMTc1MTE3LCJqdGkiOiIzMzk5NmQ1OTU1ZWI0M2I4ODBmYmY3MzcwMjAyYWMxNSIsInVzZXJfaWQiOjEyNn0.uXwmh9xmMZqiM_MOGW66KuA4r--nOICmugMSIHJLHKo`
+        }
+      }
       const response = await axios.post(
         "http://3.88.144.157:8000/api/user_post_create/",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-            Authorization: `bearer ${accessToken}`,
-          },
-        }
+         formData,config
       );
 
       // Handle the response as needed
       console.log("Image uploaded successfully:", response.data);
+      setShowModal(false);
     } catch (error) {
       console.error("Error uploading image:", error);
     }
@@ -78,25 +91,27 @@ function RightsideBar() {
   const [searchResults, setSearchResult] = useState([]);
 
   const getSearchData = async (keyword) => {
-    
+
     const config = {
       headers: {
         Authorization: "Bearer " + accessToken,
       },
     };
-      await axios.get("http://3.88.144.157:8000/api/user_list/?page=1&search="+keyword,
-        config
-      ).then((res)=>{
-        setSearchResult(res.data.results)
-      })
+    await axios.get("http://3.88.144.157:8000/api/user_list/?page=1&search=" + keyword,
+      config
+    ).then((res) => {
+      console.log(res.data.results);
+      setSearchResult(res.data.results);
 
-      
-    
+    })
+
+
+
   };
 
   const [values, setValues] = useState();
   const Searches = (e) => {
-   
+
     getSearchData(e.target.value)
 
   };
@@ -178,7 +193,7 @@ function RightsideBar() {
                 </li>
                 <li>
                   <button className="RS_btn">
-                   
+
                     <i className="fa-brands fa-spotify"></i>
                     Notifcation
                   </button>
@@ -218,22 +233,24 @@ function RightsideBar() {
                     <button
                       type="button"
                       className="post_button"
-                      onclick={handleSubmit}
+                      onClick={handlePostSubmit}
                       accept="image/*"
                     >
-                      <i className="fa-solid fa-check"></i>
+                      <i  className="fa-solid fa-check"></i>
                     </button>
                   ) : (
+                    <>
                     <i class="fa-solid fa-rectangle-xmark"></i>
-                  )}
-                  <button
+                    <button
                     type="button"
                     className="btn-close"
-                    onClick={() => setShowModal(false)}
                     data-bs-dismiss="modal"
                   >
-                    {" "}
+                    
                   </button>
+                  </>
+                  )}
+                 
                 </div>
                 <div className="modal-body">
                   <img src={photo_icon} alt=""></img>
@@ -307,28 +324,28 @@ function RightsideBar() {
                 <div className="modal-body">
                   <div className="body_btn">
                     <p>Recent</p>
-                    <button type="button" onClick={()=>setSearchResult([])}>Clear all</button>
+                    <button type="button" onClick={() => setSearchResult([])}>Clear all</button>
                   </div>
 
-                {/* loop start from here */}
-                {searchResults.map((item)=>{
-                  return (
-                    <>
-                  <Link to={'/anotherUser/'+item.id}>  <div className="search_box">
-                    <div className="searched_content">
-                      <img src={item.user_avatar} alt=""></img>
-                      <div>
-                        <p className="serched_name"></p>
-                        <p className="searched_username">{item.first_name } { item.last_name}</p>
-                      </div>
-                    </div>
-                    <button type="button" className="btn btn-close"></button>
-                  </div>
-                  </Link>
-                  </>
-                  )
-                })}
-                 
+                  {/* loop start from here */}
+                  {searchResults.map((item) => {
+                    return (
+                      <>
+                        <Link to={'/anotherUser/' + item.id}>  <div className="search_box">
+                          <div className="searched_content">
+                            <img src={item.user_avatar} alt=""></img>
+                            <div>
+                              <p className="serched_name"></p>
+                              <p className="searched_username">{item.first_name} {item.last_name}</p>
+                            </div>
+                          </div>
+                          <button type="button" className="btn btn-close"></button>
+                        </div>
+                        </Link>
+                      </>
+                    )
+                  })}
+
                   {/* loop end here */}
                 </div>
                 <div className="modal-footer">

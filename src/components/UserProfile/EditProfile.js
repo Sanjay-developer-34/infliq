@@ -59,17 +59,17 @@ const getProfileData = async () => {
 
 const updatedData=(prevState => ({
     data: {
-      bio: '',
-      avatar: '',
-      location:'',
-      banner:'',
-      anonymous_avatar:'',
-      sex:'',
-      dob:'',
-      name:'',
-      username:'',
-      phone_number:'',
-      email:'',
+      bio: 'userInfo.data.profile.bio',
+      avatar: 'userInfo.data.avatar.value',
+    //   location:'userInfo.data.location',
+    //   banner:'userInfo.data.banner',
+    //   anonymous_avatar:'userInfo.data.anonymous_avatar',
+      sex:'userInfo.data.profile.sex',
+      dob:'userInfo.data.profile.dob',
+      name:'userInfo.data.name',
+      username:'userInfo.data.username',
+      phone_number:'userInfo.data.phone_number',
+      email:'userInfo.data.email',
     }
   }));
 
@@ -80,12 +80,26 @@ const handleSubmit = async () => {
           Authorization: `Bearer ${accessToken}`
         },
       };
-      
-      const  response =  await axios.put("http://3.88.144.157:8000/api/myprofile/", updatedData ,config);
+      console.log('userInfo:' , userInfo)
+      const  response =  await axios.put("http://3.88.144.157:8000/api/myprofile/", updatedData
+       ,config);
       setUserInfo(response.data);
+    // console.log(response.data)
       console.log('Profile updated successfully');
     } catch (error) {
-      console.error('API Error:', error);
+    //   console.error('API Error:', error);
+    if (error.response) {
+        // The request was made, but the server responded with a status code that falls out of the range of 2xx
+        console.error('Server Error Data:', error.response.data);
+        console.error('Server Error Status:', error.response.status);
+        console.error('Server Error Headers:', error.response.headers);
+    } else if (error.request) {
+        // The request was made but no response was received
+        console.error('No response received:', error.request);
+    } else {
+        // Something happened in setting up the request that triggered an error
+        console.error('Request Error:', error.message);
+    }
     }
   };
 

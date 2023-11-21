@@ -8,12 +8,10 @@ import { AuthProvider } from './components/Contexts/AuthContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <CheckboxProvider>
-  <BrowserRouter>
-  <AuthProvider>
-    <App />
-  </AuthProvider>
-  
-  </BrowserRouter>
+    <BrowserRouter>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </BrowserRouter>
   </CheckboxProvider>
 );
-
